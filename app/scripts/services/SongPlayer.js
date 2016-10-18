@@ -1,16 +1,19 @@
 (function() {
     function SongPlayer(Fixtures) {
         var SongPlayer = {};
+        
         /**
         * @desc Information for the current album
         * @type {Object}
         */
         var currentAlbum = Fixtures.getAlbum();
+        
         /**
         * @desc Buzz object audio file
         * @type {Object}
         */
         var currentBuzzObject = null;
+        
         /**
         * @function setSong
         * @desc Stops currently playing song and loads new audio file as currentBuzzObject
@@ -29,6 +32,7 @@
          
             SongPlayer.currentSong = song;
         };
+        
         /**
         * @function playSong
         * @desc play a song
@@ -38,6 +42,7 @@
             currentBuzzObject.play();
             song.playing = true;
         };
+        
         /**
         * @function stopSong
         * @desc stop a song from playing
@@ -46,6 +51,8 @@
         var stopSong = function(song) {
             currentBuzzObject.stop();
             song.playing = null;
+        };
+        
         /**
         * @function getSongIndex
         * @desc Get index of song in the songs array
@@ -55,11 +62,13 @@
         var getSongIndex = function(song) {
             return currentAlbum.songs.indexOf(song);
         };
+        
         /**
         * @desc Active song object from list of songs
         * @type {Object}
         */
         SongPlayer.currentSong = null;
+        
         /**
         * @function play
         * @desc Play current or new song
@@ -76,6 +85,7 @@
                 }
             }
         };
+        
         /**
         * @function pause
         * @desc pause current song
@@ -86,6 +96,7 @@
             currentBuzzObject.pause();
             song.playing = false;
         };
+        
         /**
         * @function previous
         * @desc set current song to previous song in index
@@ -103,6 +114,7 @@
                 playSong(song);
             }
         };
+        
         /**
         * @function next
         * @desc set current song to next song in index
@@ -123,8 +135,9 @@
 
         return SongPlayer;
     }
+    
     angular
         .module('blocJams')
-        .factory('SongPlayer', SongPlayer);
-    }
+        .factory('SongPlayer', SongPlayer); 
+
 })();
