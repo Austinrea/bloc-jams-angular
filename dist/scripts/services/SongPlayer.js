@@ -127,4 +127,5 @@
     angular
         .module('blocJams')
         .factory('SongPlayer', SongPlayer);
+    }
 })();

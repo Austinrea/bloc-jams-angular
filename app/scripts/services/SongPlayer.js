@@ -123,8 +123,8 @@
 
         return SongPlayer;
     }
- 
     angular
         .module('blocJams')
         .factory('SongPlayer', SongPlayer);
+    }
 })();
