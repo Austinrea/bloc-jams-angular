@@ -67,9 +67,9 @@
                     });
                 };
                 
-                var notifyOnChange = function(newtValue) {
+                var notifyOnChange = function(newValue) {
                     if (typeof scope.onChange === 'function') {
-                    scope.onChange({value: newtValue});
+                    scope.onChange({value: newValue});
                     }
                 };
             }
