@@ -86,7 +86,7 @@
         * @desc Set volume for songs
         * @type {Number}
         */
-        SongPlayer.volume = 50;
+        SongPlayer.volume = 80;
         
         /**
         * @function play
@@ -125,7 +125,7 @@
             var currentSongIndex = getSongIndex(SongPlayer.currentSong);
             currentSongIndex--;
             
-            if (currentSongIndex < 0) {
+            if (currentSongIndex < (currentSongIndex - 1)) {
                 stopSong(song);
             } else {
                 var song = currentAlbum.songs[currentSongIndex];
@@ -171,6 +171,7 @@
         SongPlayer.setVolume = function(volume) {
             if (currentBuzzObject) {
                 currentBuzzObject.setVolume(volume);
+                console.log(volume);
             }
         };
         
